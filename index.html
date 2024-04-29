@@ -1,1 +1,112 @@
-<h1>Hello!</h1>
+
+
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Strong Labs</title>
+
+    <!--JS-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Source+Sans+Pro">
+    
+    
+  </head>
+
+  <body>
+
+  <!--Header-->
+  <header class="p-3">
+    <div class="container" style="font-family: 'Playfair Display'; color: #5bc0de">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li>
+            <a class="btn btn-secondary dropdown-toggle text-info text-bg-dark" href="#" role="button" data-bs-toggle="dropdown">Clinical Chemistry</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">EKFC Calculator</a></li>
+              </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  
+  <!--Content-->
+    
+<div class="container">
+  <div id="inputs">
+    <h1>EKFC Calculator</h1>
+
+    
+
+<form  class="form-horizontal" id="inputs_form" method="post" > 
+    <div id="div_id_gender" class="mb-3 row"> 
+        <label  class="col-form-label col-md-3 requiredField">
+                Biological Gender<span class="asteriskField">*</span> 
+            </label> <div class="col-md-2"> 
+                <div class="form-check"> 
+                    <input type="radio" class="form-check-input"  name="gender" value="m"  id="id_gender_0" required> 
+                    <label for="id_gender_0" class="form-check-label">Male</label> 
+                </div> 
+                <div class="form-check"> 
+                    <input type="radio" class="form-check-input"  name="gender" value="f"  id="id_gender_1" required> 
+                    <label for="id_gender_1" class="form-check-label">Female</label> 
+                </div> 
+            </div> 
+        </div> 
+        <div id="div_id_age" class="mb-3 row"> 
+            <label for="id_age" class="col-form-label col-md-3 requiredField">Age (must be &gt; 2yrs)<span class="asteriskField">*</span> </label> 
+            <div class="col-md-2"> 
+                <input type="number" name="age" value="2" min="2" max="125" class="numberinput form-control" required id="id_age"> 
+            </div> 
+        </div> 
+        <div id="div_id_scr" class="mb-3 row"> 
+            <label for="id_scr" class="col-form-label col-md-3 requiredField">Serum Creatinine (mg/dL)<span class="asteriskField">*</span> </label> 
+            <div class="col-md-2"> 
+                <input type="number" name="scr" value="1.0" min="0" step="0.1" class="numberinput form-control" required id="id_scr"> 
+            </div> 
+        </div> 
+    </form>
+
+
+    <p><small>* Required Fields</small></p>
+    <button id="ekfc_submit" type="button" class="btn btn-secondary" onclick="getResults()">
+      Get Results
+    </button>
+  </div>
+  <p/>
+  <div id="results">
+    <p>RESULT: <button id="result_btn" type="button" class="btn btn-info">28.5</button> mL/min/1.73m<sup>2</sup></p>
+  </div>
+
+</div>
+
+
+  <!--Footer-->
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="position:fixed; bottom: 0; left: 7%; width: 86%; text-align: center;">
+        <div>
+            <p/>
+              <small>Reference:
+                <a href="https://www.acpjournals.org/doi/full/10.7326/M20-4366">Pottel H, Björk J, Courbebaisse M et al. Development and Validation of a Modified Full Age Spectrum Creatinine-Based Equation to Estimate Glomerular Filtration Rate : A Cross-sectional Analysis of Pooled Data. Ann Intern Med. 2020</a>
+              </small>
+          </div>
+        <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        </a>
+        <span class="mb-3 mb-md-0 text-muted">© 2024 StrongLabs LLC</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>"
+  </body>
+</html>
