@@ -37,14 +37,14 @@ function solve(scr, qValue, age) {
 
 
 function getResults() {
-    let age = parseInt(document.getElementById('id_age').value);
-    let scr = parseFloat(document.getElementById('id_scr').value);
-    let gender = document.getElementById('id_gender').value;
+    let form = document.getElementById("inputs_form");
+  
+    let age = parseInt(form.elements["age"].value);
+    let gender = form.elements["gender"].value;
+    let scr = parseFloat(form.elements["scr"].value);
 
     let qValue = getQ(age, gender);
     let result = solve(scr, qValue, age).toFixed(1);
-    console.log(result)
-
     let result_btn = document.getElementById('result_btn');
     result_btn.innerText = result;
 }
